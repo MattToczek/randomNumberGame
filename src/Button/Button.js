@@ -31,16 +31,34 @@ function Application(props) {
     const timesTwo = ()=> props.setCounter(props.counter*2);
     const toZero = ()=> props.setCounter(props.counter-props.counter);
     const addTurns = ()=> props.setTurns(props.turns+1);
-    console.log(props.turns);
+
+    const plusOneAndTurns = () => {
+        plusOne();
+        addTurns();
+    }
+    const plusThreeAndTurns = () => {
+        plusThree();
+        addTurns();
+    }
+    const timesTwoAndTurns = () => {
+        timesTwo();
+        addTurns();
+    }
+    const toZeroAndTurns = () => {
+        toZero();
+        addTurns();
+    }
+
+    
     
     return (
         
         <div>
            
-            <Button label="+1" onClickFunc = {plusOne, addTurns}/>
-            <Button label="+3" onClickFunc = {plusThree, addTurns}/>
-            <Button label="x2" onClickFunc = {timesTwo, addTurns}/>
-            <Button label="Clear" onClickFunc = {toZero, addTurns}/>
+            <Button label="+1" onClickFunc = {plusOneAndTurns}/>
+            <Button label="+3" onClickFunc = {plusThreeAndTurns}/>
+            <Button label="x2" onClickFunc = {timesTwoAndTurns}/>
+            <Button label="Clear" onClickFunc = {toZeroAndTurns}/>
 
 
             <Display message = {props.counter}/>
