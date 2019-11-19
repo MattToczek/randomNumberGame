@@ -31,6 +31,7 @@ function Application(props) {
     const timesTwo = ()=> props.setCounter(props.counter*2);
     const toZero = ()=> props.setCounter(props.counter-props.counter);
     const addTurns = ()=> props.setTurns(props.turns+1);
+    const turnsToZero = ()=> props.setTurns(props.turns-props.turns);
 
     const plusOneAndTurns = () => {
         plusOne();
@@ -49,6 +50,11 @@ function Application(props) {
         addTurns();
     }
 
+    const clear = () => {
+        toZero();
+        turnsToZero();
+    }
+
     
     
     return (
@@ -59,6 +65,7 @@ function Application(props) {
             <Button label="+3" onClickFunc = {plusThreeAndTurns}/>
             <Button label="x2" onClickFunc = {timesTwoAndTurns}/>
             <Button label="Clear" onClickFunc = {toZeroAndTurns}/>
+            <Button label="Reset" onClickFunc = {clear}/>
 
 
             <Display message = {props.counter}/>

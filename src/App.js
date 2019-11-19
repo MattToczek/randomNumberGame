@@ -13,6 +13,8 @@ const[turns, setTurns] = useState(0);
 const getRandNumber = () => {
   let a = Math.ceil(Math.random()*100);
   setRnumb(a);
+  setTurns(0);
+  setCounter(0);
 }
 
    
